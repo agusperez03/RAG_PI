@@ -4,6 +4,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import router as api_router
 from app.core.config import settings
 
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+
 # Configure logging
 logging.basicConfig(
     level=settings.LOG_LEVEL,
@@ -25,9 +28,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Mount Static Files
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
+
 # Include Routes
 app.include_router(api_router)
 
 @app.get("/")
-def read_root():
-    return {"message": "Welcome to RAG API. Use POST /ask to query."}
+async def read_root():
+    return FileResponse('app/static/index.html')

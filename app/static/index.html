@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PI RAG Chat</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <div class="logo">
+                <h1>PI RAG Chat</h1>
+            </div>
+            <div class="status-indicator">
+                <span class="dot"></span> Online
+            </div>
+        </header>
+
+        <div class="messages-area" id="messagesArea">
+            <div class="message system-message">
+                <div class="avatar">AI</div>
+                <div class="bubble">
+                    <p>Hello! Hola! Alo! I'm your RAG Assistant. Ask me anything about your documents.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-area">
+            <form id="chatForm" class="chat-form">
+                <input type="text" id="userInput" placeholder="Type your message..." autocomplete="off">
+                <button type="submit" id="sendButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path
+                            d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

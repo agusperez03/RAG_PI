@@ -35,4 +35,6 @@ Answer: Zara é um explorador destemido que embarca em uma missão crucial para 
 USER'S CURRENT QUESTION:
 {question}
 
-ANSWER (single sentence with emojis):"""
+REMEMBER: If the context is in a different language than the question, you MUST TRANSLATE the answer into the language of the current question.
+
+ANSWER (single sentence with emojis and translation if needed):"""
