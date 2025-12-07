@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+langchain
+langchain-cohere
+langchain-google-genai
+chromadb
+python-dotenv
+pydantic
+langdetect
+requests
+pypdf

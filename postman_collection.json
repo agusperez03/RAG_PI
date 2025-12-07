@@ -1,0 +1,65 @@
+{
+    "info": {
+        "name": "RAG API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Ask Question - Spanish",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"user_name\": \"Test User\",\n  \"question\": \"Quien es Zara?\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/ask"
+                }
+            }
+        },
+        {
+            "name": "Ask Question - English Emma",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"user_name\": \"Test User\",\n  \"question\": \"What did Emma decide to do?\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/ask"
+                }
+            }
+        },
+        {
+            "name": "Ask Question - English Flower",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"user_name\": \"Test User\",\n  \"question\": \"What is the name of the magical flower?\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/ask"
+                }
+            }
+        }
+    ]
+}
