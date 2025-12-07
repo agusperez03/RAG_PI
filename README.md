@@ -1,11 +1,11 @@
-# RAG System with LangChain, Gemini & ChromaDB
+# RAG System with LangChain, Cohere & ChromaDB
 
 ## Descripción
-Sistema RAG que permite hacer preguntas sobre un documento y obtener respuestas contextuales usando Google Gemini.
+Sistema RAG que permite hacer preguntas sobre un documento y obtener respuestas contextuales usando Cohere.
 
 ## Requisitos Previos
 - Python 3.11+
-- Google API Key para Gemini
+- Cohere API Key
 - Git
 
 ## Instalación Local
@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 ### 4. Configurar variables de entorno
 cp .env.example .env
-# Editar .env y agregar GOOGLE_API_KEY
+# Editar .env y agregar COHERE_API_KEY
 
 ### 5. Inicializar ChromaDB
 python -m app.utils.document_processor
