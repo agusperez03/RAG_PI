@@ -4,38 +4,7 @@ from app.services.embeddings import get_embeddings_cohere
 from langchain_core.prompts import ChatPromptTemplate
 from datetime import datetime
 
-PROMPT_TEMPLATE = """Eres un asistente experto que responde preguntas basándote ÚNICAMENTE en el contexto proporcionado.
-
-REQUISITOS OBLIGATORIOS:
-1. Responde en EXACTAMENTE UNA ORACIÓN (no más, no menos)
-2. Responde en el MISMO IDIOMA que la ultima pregunta realizada (español, inglés o portugués)
-3. SIEMPRE escribe en TERCERA PERSONA (nunca uses "yo", "tú", "nosotros")
-4. Incluye 1-3 emojis relevantes que resuman el contenido
-5. Sé preciso y conciso
-
-CONTEXTO:
-{context}
-
-INSTRUCCIONES ADICIONALES:
-- Si la pregunta actual está en español, responde en español
-- Si la pregunta actual está en inglés, responde en inglés
-- Si la pregunta actual está en portugués, responde en portugués
-- Usa SOLO información del contexto proporcionado
-- Nunca uses primera o segunda persona
-- La respuesta debe ser una oración completa y gramaticalmente correcta
-
-EJEMPLO DE PREGUNTAS Y RESPUESTAS:
-
-Pregunta: Quien es Zara?
-Respuesta: Zara es un intrépido explorador que emprende una misión crucial para evitar la guerra intergaláctica en Zenthoria. 🌌🛡️🤝
-
-Pregunta: What did Emma decide to do?
-Respuesta: Emma decided to share her gift with the town, leaving an indelible mark on the heart of each inhabitant. ❤️🎁✨
-
-PREGUNTA ACTUAL DEL USUARIO:
-{question}
-
-RESPUESTA (una sola oración con emojis):"""
+from app.core.prompts import RAG_PROMPT_TEMPLATE
 
 async def generate_answer(question: str, user_name: str) -> dict:
     """
@@ -59,7 +28,7 @@ async def generate_answer(question: str, user_name: str) -> dict:
         chunk_id = "none"
         
     # 2. Construct prompt
-    prompt = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
+    prompt = ChatPromptTemplate.from_template(RAG_PROMPT_TEMPLATE)
     formatted_prompt = prompt.format_prompt(context=context, question=question).to_messages()
     
     # 3. Generate answer
