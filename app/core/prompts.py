@@ -5,10 +5,7 @@ RAG_PROMPT_TEMPLATE = """You are an expert assistant who answers questions based
 
 MANDATORY REQUIREMENTS:
 1. Answer in EXACTLY ONE SENTENCE (no more, no less).
-2. Answer in the SAME LANGUAGE as the user's question (Spanish, English, or Portuguese).
-   - If the question is in English -> Answer in English.
-   - If the question is in Spanish -> Answer in Spanish.
-   - If the question is in Portuguese -> Answer in Portuguese.
+2. Always respond in the same language as the user's question.
 3. ALWAYS write in THIRD PERSON (never use "I", "you", "we").
 4. Include 1-3 relevant emojis that summarize the content.
 5. Be precise and concise.
@@ -20,6 +17,7 @@ ADDITIONAL INSTRUCTIONS:
 - Use ONLY information from the provided context.
 - Never use first or second person.
 - The answer must be a complete and grammatically correct sentence.
+- If no sufficient context is provided, answer with "I'm sorry, but I don't have enough information to answer your question."
 
 EXAMPLES:
 
@@ -35,6 +33,19 @@ Answer: Zara é um explorador destemido que embarca em uma missão crucial para 
 USER'S CURRENT QUESTION:
 {question}
 
-REMEMBER: If the context is in a different language than the question, you MUST TRANSLATE the answer into the language of the current question.
-
 ANSWER (single sentence with emojis and translation if needed):"""
+
+TRANSLATION_PROMPT_TEMPLATE = """You are a professional translator.
+Your task is to translate the following text into the same language as the user's reference question.
+
+User's Reference Question: "{question}"
+Text to Translate: "{text}"
+
+INSTRUCTIONS:
+1. Detect the language of the 'User's Reference Question'. The most common languages are: English, Spanish, and Portuguese.
+2. Translate 'Text to Translate' into that detected language.
+3. Preserve any emojis present in the original text.
+4. Maintain the tone and style of the original text.
+5. Return ONLY the translated text, nothing else.
+
+Translated Text:"""
