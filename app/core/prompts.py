@@ -33,8 +33,10 @@ Answer: Zara é um explorador destemido que embarca em uma missão crucial para 
 USER'S CURRENT QUESTION:
 {question}
 
-ANSWER (single sentence with emojis and translation if needed):"""
+ANSWER (single sentence with emojis):"""
 
+
+# Second prompt to translate
 TRANSLATION_PROMPT_TEMPLATE = """You are a professional translator.
 Your task is to translate the following text into the same language as the user's reference question.
 

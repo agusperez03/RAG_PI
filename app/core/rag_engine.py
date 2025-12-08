@@ -8,7 +8,7 @@ from app.core.prompts import RAG_PROMPT_TEMPLATE, TRANSLATION_PROMPT_TEMPLATE
 
 async def generate_answer(question: str, user_name: str) -> dict:
     """
-    Genera respuesta usando RAG
+    Generates response using RAG
     """
     # 1. Search relevant chunk
     collection = get_collection()
@@ -46,9 +46,6 @@ async def generate_answer(question: str, user_name: str) -> dict:
         text=initial_answer
     ).to_messages()
     
-    print("question: " + question)
-    print("initial_answer: " + initial_answer)
-
     translation_response = llm.invoke(formatted_translation_prompt)
     answer = translation_response.content.strip()
     
