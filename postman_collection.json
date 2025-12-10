@@ -19,7 +19,15 @@
                     "raw": "{\n  \"user_name\": \"Test User\",\n  \"question\": \"Quien es Zara?\"\n}"
                 },
                 "url": {
-                    "raw": "http://localhost:8000/ask"
+                    "raw": "http://localhost:8000/ask",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "ask"
+                    ]
                 }
             }
         },
@@ -38,7 +46,15 @@
                     "raw": "{\n  \"user_name\": \"Test User\",\n  \"question\": \"What did Emma decide to do?\"\n}"
                 },
                 "url": {
-                    "raw": "http://localhost:8000/ask"
+                    "raw": "http://localhost:8000/ask",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "ask"
+                    ]
                 }
             }
         },
@@ -57,7 +73,15 @@
                     "raw": "{\n  \"user_name\": \"Test User\",\n  \"question\": \"What is the name of the magical flower?\"\n}"
                 },
                 "url": {
-                    "raw": "http://localhost:8000/ask"
+                    "raw": "http://localhost:8000/ask",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "ask"
+                    ]
                 }
             }
         }
