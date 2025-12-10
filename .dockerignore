@@ -1,0 +1,27 @@
+# Git
+.git
+.gitignore
+
+# Environment variables (Secrets)
+.env
+.env.example
+
+# Python / Virtual Environment
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Testing
+tests/
+test_langdetect.py
+
+# Documentation & Specs
+Challenge.pdf
+postman_collection.json
+README.md
+
+# OS specific
+.DS_Store
+Thumbs.db
